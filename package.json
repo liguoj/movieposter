@@ -1,0 +1,23 @@
+{
+  "name": "movieposter",
+  "version": "1.0.0",
+  "description": "create a movie poster",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengwei2014/movieposter.git"
+  },
+  "keywords": [
+    "movie",
+    "poster"
+  ],
+  "author": "free",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fengwei2014/movieposter/issues"
+  },
+  "homepage": "https://github.com/fengwei2014/movieposter#readme"
+}
