@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/fengwei2014/movieposter/issues"
   },
-  "homepage": "https://github.com/fengwei2014/movieposter#readme"
+  "homepage": "https://github.com/fengwei2014/movieposter#readme",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "mockjs": "^1.0.1-beta3"
+  }
 }
