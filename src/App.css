@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  height: 30rem; 
+  color: white;
+}
+
+.App-img {
+  height: 100%;
+}
+
+.App-intro {
+  font-size: large;
+  margin: 0 20px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

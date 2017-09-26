@@ -1,27 +1,16 @@
 {
-  "name": "movieposter",
-  "version": "1.0.0",
-  "description": "create a movie poster",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fengwei2014/movieposter.git"
-  },
-  "keywords": [
-    "movie",
-    "poster"
-  ],
-  "author": "free",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fengwei2014/movieposter/issues"
-  },
-  "homepage": "https://github.com/fengwei2014/movieposter#readme",
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "koa": "^2.3.0",
-    "mockjs": "^1.0.1-beta3"
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-scripts": "1.0.13"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
