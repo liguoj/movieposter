@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "koa": "^2.3.0",
+    "koa-body": "^2.4.0",
     "koa-router": "^7.2.1",
+    "koa-static": "^4.0.1",
     "react": "^15.6.2",
     "react-dom": "^15.6.2",
     "react-dropzone": "^4.1.3",

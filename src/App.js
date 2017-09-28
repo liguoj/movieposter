@@ -28,16 +28,6 @@ class App extends Component {
         </div>
         <div className="App-intro">{this.state.movie.movie_words}</div>
         <div className="App-intro">{this.state.movie.movie_name}</div>
-        <div>
-          <Dropzone multiple={false} accept="image/*" onDrop={this.onImageDrop.bind(this)}> 
-            <p>Drop an image or click to select a file to upload.</p>
-　　　　　　</Dropzone>
-        <ul>
-            {
-              this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
-            }
-          </ul>
-        </div>
       </div>
     );
   }
