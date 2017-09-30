@@ -1,33 +1,36 @@
 const Koa = require('koa');
 const Router = require('koa-router');
-const serve = require('koa-static');
-const fs = require('fs');
+const koaStatic = require('koa-static');
 const koaBody = require('koa-body');
+const session = require('koa-session-minimal');
+const MysqlStore = require('koa-mysql-session');
+const bodyParser = require('koa-bodyparser');
+const path = require('path');
+
+
 const app = new Koa();
 const router = new Router();
+const config = require('./src/config');
+const myRouter = require('./src/Router');
 
-const home = ctx => {
-    ctx.response.type = "html";
-    ctx.response.body = "<h1> Hello world !!</h1>"
-}
-const admin = ctx => {
-    ctx.response.type = "html";
-    ctx.response.body = fs.createReadStream('./public/view/admin.html');
-}
-
-const upLoadImage = ctx => {
-    console.log('ctx.request ==========');
-    console.log(ctx.request);
-    console.log(ctx.request.body);
-    // => POST body
-    ctx.body = JSON.stringify(ctx.request.body);
+const sessionMysqlConfig = {
+    user:config.database.USERNAME,
+    password:config.database.PASSWORD,
+    database:config.database.DATABASE,
+    host:config.database.HOST
 }
 
-router
-  .get('/', home)
-  .get('/admin',admin)
-  .post('/admin/uploadImage',upLoadImage)
-app.use(koaBody());
-app.use(router.routes()).use(router.allowedMethods());
+app.use(session({
+    key:"USER_SID",
+    store:new MysqlStore(sessionMysqlConfig)
+}))
 
-app.listen(3001);
+app.use(koaStatic(
+    path.join(__dirname,'./public/view')
+))
+
+app.use(bodyParser());
+app.use(myRouter.routes()).use(router.allowedMethods());
+
+app.listen(config.port);
+console.log(`koa server is listening on port ${config.port}`);

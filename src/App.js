@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Dropzone from 'react-dropzone';
+// import Dropzone from 'react-dropzone';
 import './App.css';
 
 class App extends Component {
