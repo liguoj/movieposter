@@ -8,8 +8,6 @@ var pool = mysql.createPool({
     database:config.database.DATABASE
 });
 
-// connection.connect();
-
 let query = function(sql,values){
     return new Promise((resolve,reject) => {
         pool.getConnection(function(err,connection){
@@ -29,47 +27,6 @@ let query = function(sql,values){
     });
 }
 
-// users=
-// `create table if not exists users(
-//  id INT NOT NULL AUTO_INCREMENT,
-//  name VARCHAR(100) NOT NULL,
-//  pass VARCHAR(40) NOT NULL,
-//  PRIMARY KEY ( id )
-// );`
-//  
-// posts=
-// `create table if not exists posts(
-//  id INT NOT NULL AUTO_INCREMENT,
-//  name VARCHAR(100) NOT NULL,
-//  title VARCHAR(40) NOT NULL,
-//  content  VARCHAR(40) NOT NULL,
-//  uid  VARCHAR(40) NOT NULL,
-//  moment  VARCHAR(40) NOT NULL,
-//  comments  VARCHAR(40) NOT NULL DEFAULT '0',
-//  pv  VARCHAR(40) NOT NULL DEFAULT '0',
-//  PRIMARY KEY ( id )
-// );`
-//  
-// comment=
-// `create table if not exists comment(
-//  id INT NOT NULL AUTO_INCREMENT,
-//  name VARCHAR(100) NOT NULL,
-//  content VARCHAR(40) NOT NULL,
-//  postid VARCHAR(40) NOT NULL,
-//  PRIMARY KEY ( id )
-// );`
-//  
-// let createTable = function( sql ) {
-//   return query( sql, [] )
-// }
-//  
-// // 建表
-// createTable(users)
-// createTable(posts)
-// createTable(comment)
-
- 
 module.exports={
   query
-//   createTable
 }
