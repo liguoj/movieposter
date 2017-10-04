@@ -4,9 +4,9 @@ const config = {
    
     // 数据库配置
     database: {
-      DATABASE: 'movie',
+      DATABASE: 'moive',
       USERNAME: 'root',
-      PASSWORD: '111111',
+      PASSWORD: '123456',
       PORT: '3306',
       HOST: 'localhost'
     }

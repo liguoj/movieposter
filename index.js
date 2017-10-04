@@ -7,7 +7,6 @@ const MysqlStore = require('koa-mysql-session');
 const bodyParser = require('koa-bodyparser');
 const path = require('path');
 
-
 const app = new Koa();
 const router = new Router();
 const config = require('./src/config');
@@ -20,10 +19,10 @@ const sessionMysqlConfig = {
     host:config.database.HOST
 }
 
-app.use(session({
-    key:"USER_SID",
-    store:new MysqlStore(sessionMysqlConfig)
-}))
+// app.use(session({
+//     key:"USER_SID",
+//     store:new MysqlStore(sessionMysqlConfig)
+// }))
 
 app.use(koaStatic(
     path.join(__dirname,'./public/view')
