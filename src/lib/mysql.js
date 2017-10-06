@@ -25,8 +25,15 @@ let query = function(sql,values){
             }
         })
     });
+};
+
+let insertMovie = function( value ) {
+  let _sql = "insert into movie(movie_title,movie_director,movie_publish_date_str,movie_img) values(?,?,?,?);";
+  return query( _sql, value )
 }
 
+
 module.exports={
-  query
+  query,
+  insertMovie
 }

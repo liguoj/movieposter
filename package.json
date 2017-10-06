@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "elm": "^0.18.0",
+    "jquery": "^3.2.1",
     "koa": "^2.3.0",
     "koa-body": "^2.4.0",
     "koa-bodyparser": "^4.2.0",

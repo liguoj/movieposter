@@ -2,6 +2,7 @@ const router=require('koa-router')();
 const fs = require('fs');
 const { query } = require('./lib/mysql');
 const { adminMovie } = require('./router/admin') //admin router
+const { adminList } = require('./router/list')
 
 const home = ctx => {
   ctx.response.type = "html";
@@ -24,6 +25,7 @@ router
 .get('/', home)
 .get('/admin',admin)
 .post('/admin/movie',adminMovie)
+.get('/admin/list',adminList)
 .post('/admin/uploadImage',upLoadImage)
 
 module.exports=router
