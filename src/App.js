@@ -7,15 +7,9 @@ class App extends Component {
 
   constructor() {
     super()
-    this.state = {
-      img_url:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506407203182&di=614e75ffc93a1c2260c5fe845fa0f882&imgtype=0&src=http%3A%2F%2Fimage12.m1905.cn%2Fmapps%2Fuploadfile%2Fedu%2F2014%2F1225%2Fthumb_0_400_600_2014122511060228826.jpg",
-      movie_words:'"I guess it comes down to a simple choice:get busy living or get busy dying."',
-      movie_name:"肖申克的救赎"
-    }
-  }
 
-  getInitialState () {
-    return {
+    // set default img and word u can see
+    this.state = {
       img_url:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506407203182&di=614e75ffc93a1c2260c5fe845fa0f882&imgtype=0&src=http%3A%2F%2Fimage12.m1905.cn%2Fmapps%2Fuploadfile%2Fedu%2F2014%2F1225%2Fthumb_0_400_600_2014122511060228826.jpg",
       movie_words:'"I guess it comes down to a simple choice:get busy living or get busy dying."',
       movie_name:"肖申克的救赎"
@@ -27,9 +21,9 @@ class App extends Component {
       let firstItem = result[0];
       this.setState(
         {
-          img_url:"",
-          movie_name:"",
-          movie_words:"xxxxxxxxx"
+          img_url:firstItem.movie_img,
+          movie_name:firstItem.movie_title,
+          movie_words:"This is a word for u to find some thing intresting!"
         }
       )
     });

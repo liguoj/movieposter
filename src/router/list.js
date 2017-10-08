@@ -1,22 +1,10 @@
 const { query } = require('../lib/mysql');
 
-const adminList = ctx => {
-
-    async function getAllData(){
-        let _sql = "select * from movie";
-        let datalist = await query(_sql);
-        return datalist
-    }
-
-    async function getData(){
-        let datalist = await getAllData();
-        console.log('dataList: \n');
-        console.log(datalist);
-        ctx.body = datalist;
-    }
-
-    ctx.body = getAllData();
-
+// async 配合 await 使用
+async function adminList(ctx) {
+    ctx.set("Access-Control-Allow-Origin", "*");
+    let _sql = "select * from movie";
+    ctx.body = await query(_sql);
 }
 
 module.exports={

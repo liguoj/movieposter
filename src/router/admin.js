@@ -1,4 +1,4 @@
-const { query , insertMovie } = require('../lib/mysql');
+const { query } = require('../lib/mysql');
 
 const adminMovie = ctx => {
     var formData = JSON.stringify(ctx.request.body);
